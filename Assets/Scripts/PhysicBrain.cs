@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class PhysicBrain : MonoBehaviour
 {
@@ -9,17 +10,29 @@ public class PhysicBrain : MonoBehaviour
     public Vector3 netForce;
 
     private List<Vector3> forceList = new();
-    private Vector3 gravityForce;
+    private PhysicBrain[] physicObjects;
 
-    private void Start()
+    private const float BIG_G = 6.673e-11f;
+
+    private void Awake()
     {
-        gravityForce = new Vector3(0, -gravity * mass,0); 
+        physicObjects = FindObjectsOfType<PhysicBrain>();
     }
 
     private void FixedUpdate()
     {
-        AddForce(gravityForce);
+        foreach (PhysicBrain physicObject in physicObjects)
+        {
+            if (physicObject != this)
+            {
+                Vector3 offset = this.transform.position - physicObject.transform.position;
+                float rSquared = Mathf.Pow(offset.magnitude, 2f);
+                float gravityMagnitude = BIG_G * this.mass * physicObject.mass / rSquared;
+                Vector3 gravityFall = gravityMagnitude * offset.normalized;
 
+                this.AddForce(-gravityFall);
+            }
+        }
         // summing force
 
         netForce = Vector3.zero;
