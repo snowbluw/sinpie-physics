@@ -13,10 +13,4 @@ public class Spawner : MonoBehaviour
             Instantiate(obj, new Vector3(Random.Range(-5.0f, 5.0f), Random.Range(-3.0f, 3.0f), Random.Range(-5.0f, 5.0f)), Quaternion.identity);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

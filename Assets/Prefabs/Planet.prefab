@@ -96,7 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a21acf8f179f33148af9e53624049c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mass: 200000000
-  gravity: 9.8
+  mass: 1
   velocity: {x: 0, y: 0, z: 0}
   netForce: {x: 0, y: 0, z: 0}
+  physicObjects: []
+  gravityMode: 0
+  gravity: 9.8
