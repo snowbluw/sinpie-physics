@@ -140,6 +140,10 @@ PrefabInstance:
       value: 9.8
       objectReference: {fileID: 0}
     - target: {fileID: 1181223838209322956, guid: 09f9caedb0d0434459ad54e5db0b09e3, type: 3}
+      propertyPath: useGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181223838209322956, guid: 09f9caedb0d0434459ad54e5db0b09e3, type: 3}
       propertyPath: velocity.x
       value: 0
       objectReference: {fileID: 0}
@@ -434,6 +438,7 @@ MonoBehaviour:
   mass: 5.972e+24
   velocity: {x: 0, y: 0, z: 0}
   netForce: {x: 0, y: 0, z: 0}
+  useGravity: 1
   gravityMode: 0
   gravity: 9.8
 --- !u!4 &975816186

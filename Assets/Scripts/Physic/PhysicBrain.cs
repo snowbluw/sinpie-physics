@@ -11,11 +11,14 @@ public class PhysicBrain : MonoBehaviour
     private List<Vector3> forceList = new();
     private List<PhysicBrain> physicObjects = new();
 
+    #region Gravity
     private const float BIG_G = 6.673e-11f;
 
+    public bool useGravity = true;
     public enum GravityMode { Realistic, GoDown }
     public GravityMode gravityMode;
     public float gravity = 9.8f;
+    #endregion
 
     public float Mass { get { return mass; } set { mass = value; } }
 
@@ -48,6 +51,8 @@ public class PhysicBrain : MonoBehaviour
 
     private void CalculateGravity(GravityMode mode)
     {
+        if (!useGravity) { return; }
+
         if (gravityMode == GravityMode.Realistic)
         {
             foreach (PhysicBrain physicObject in physicObjects)
