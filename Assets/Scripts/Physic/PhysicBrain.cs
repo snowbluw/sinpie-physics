@@ -7,8 +7,9 @@ public class PhysicBrain : MonoBehaviour
     public float mass = 1.0f;
     public Vector3 velocity;
     public Vector3 netForce;
+    private BoxCollider bx;
 
-    private List<Vector3> forceList = new();
+    private List<Vector3> forces = new();
     private List<PhysicBrain> physicObjects = new();
 
     #region Gravity
@@ -35,12 +36,12 @@ public class PhysicBrain : MonoBehaviour
         // summing force
         netForce = Vector3.zero;
 
-        foreach (Vector3 force in forceList)
+        foreach (Vector3 force in forces)
         {
             netForce += force;
         }
 
-        forceList.Clear();
+        forces.Clear();
 
         // update velocity
         Vector3 acceleration = netForce / mass;
@@ -77,6 +78,8 @@ public class PhysicBrain : MonoBehaviour
 
     public void AddForce(Vector3 force)
     {
-        forceList.Add(force);
+        forces.Add(force);
     }
+
+
 }

@@ -6,6 +6,7 @@ public class SpringVisual : MonoBehaviour
 {
     private LineRenderer line;
     public Transform pointA,pointB;
+    public Transform springView;
 
     private Vector3[] positions = new Vector3[2];
 

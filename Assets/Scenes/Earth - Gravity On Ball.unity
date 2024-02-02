@@ -133,7 +133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1181223838209322956, guid: 09f9caedb0d0434459ad54e5db0b09e3, type: 3}
       propertyPath: mass
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1181223838209322956, guid: 09f9caedb0d0434459ad54e5db0b09e3, type: 3}
       propertyPath: gravity
@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1181223838209322956, guid: 09f9caedb0d0434459ad54e5db0b09e3, type: 3}
       propertyPath: useGravity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1181223838209322956, guid: 09f9caedb0d0434459ad54e5db0b09e3, type: 3}
       propertyPath: velocity.x
